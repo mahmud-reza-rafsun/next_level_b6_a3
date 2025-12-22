@@ -16,6 +16,20 @@ ERD Diagram: https://drawsql.app/teams/not-null-1/diagrams/next-level-b6-a3
 
 ---
 
+## 📖 Theory Questions (Viva Practice)
+
+1. **What is a foreign key and why is it important in relational databases?**
+
+2. **What is the difference between WHERE and HAVING clauses in SQL?**
+
+3. **What is a primary key and what are its characteristics?**
+
+4. **What is the difference between INNER JOIN and LEFT JOIN in SQL?**
+
+Google Drive: https://drive.google.com/drive/folders/1R5F1kX7Xw59rIpJMfutrtNiAVjo9dMsq?usp=drive_link
+
+---
+
 ## 🔍 Key Features & Queries
 
 - **Booking Report (JOIN & USING):**  
@@ -39,5 +53,5 @@ ERD Diagram: https://drawsql.app/teams/not-null-1/diagrams/next-level-b6-a3
 
 ## 🛠 Tech Stack
 
-- **Language:** PostgreSQL  
+- **Language:** PostgreSQL
 - **Tools:** Beekeeper Studio
