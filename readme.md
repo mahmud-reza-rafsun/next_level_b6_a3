@@ -1,57 +1,62 @@
-# 🚗 Vehicle Rental System - Database
+# 🚗 Vehicle Rental System – Database
 
-এই প্রোজেক্টটি একটি গাড়ি রেন্টাল সিস্টেমের ডাটাবেজ বাস্তবায়ন প্রদর্শনের জন্য তৈরি করা হয়েছে।
-এখানে **PostgreSQL**-এর অ্যাডভান্সড ফিচার যেমন **INNER JOIN**, **NOT EXISTS**, **GROUP BY** এবং **HAVING** ব্যবহার করে ডেটা বিশ্লেষণ, রিপোর্ট তৈরি এবং ব্যবসায়িক ইনসাইট বের করা হয়েছে।
-এটি ডাটাবেজ লজিক এবং বাস্তব প্রজেক্টের ডাটাবেস অপারেশন শেখার জন্য একটি উদাহরণ হিসেবে ব্যবহার করা যেতে পারে।
+This project is designed to demonstrate the database implementation of a **vehicle rental system**.  
+It uses advanced **PostgreSQL** features such as **INNER JOIN**, **NOT EXISTS**, **GROUP BY**, and **HAVING** to perform data analysis, generate reports, and extract business insights.  
+This repository can be used as a practical example for learning database logic and real-world database operations.
 
 ---
 
 ## 🖼 Entity Relationship Diagram (ERD)
 
-ডাটাবেজে তিনটি মূল টেবিল রয়েছে: **Users**, **Vehicles**, এবং **Bookings**।  
-ERD দেখায় এই টেবিলগুলোর মধ্যে কীভাবে লজিক্যাল সম্পর্ক এবং foreign key constraints ব্যবহার করা হয়েছে।  
-এই লিঙ্কে আপনি সম্পূর্ণ ERD দেখতে পাবেন:
+The database consists of three main tables:
 
-ERD Diagram: https://drawsql.app/teams/not-null-1/diagrams/next-level-b6-a3 
+- **Users**
+- **Vehicles**
+- **Bookings**
+
+The ERD illustrates how logical relationships and foreign key constraints are applied between these tables.
+
+🔗 **ERD Diagram:**  
+https://drawsql.app/teams/not-null-1/diagrams/next-level-b6-a3  
 
 ---
 
 ## 📖 Theory Questions (Viva Practice)
 
-1. **What is a foreign key and why is it important in relational databases?**
-
-2. **What is the difference between WHERE and HAVING clauses in SQL?**
-
-3. **What is a primary key and what are its characteristics?**
-
+1. **What is a foreign key and why is it important in relational databases?**  
+2. **What is the difference between WHERE and HAVING clauses in SQL?**  
+3. **What is a primary key and what are its characteristics?**  
 4. **What is the difference between INNER JOIN and LEFT JOIN in SQL?**
 
-Google Drive: https://drive.google.com/drive/folders/1R5F1kX7Xw59rIpJMfutrtNiAVjo9dMsq?usp=drive_link
+📂 **Google Drive (Viva & Resources):**  
+https://drive.google.com/drive/folders/1R5F1kX7Xw59rIpJMfutrtNiAVjo9dMsq?usp=drive_link
 
 ---
 
 ## 🔍 Key Features & Queries
 
-- **Booking Report (JOIN & USING):**  
-  Bookings টেবিলের সাথে Users এবং Vehicles টেবিলকে যুক্ত করে একটি বিস্তারিত রিপোর্ট তৈরি করা হয়েছে।  
-  এখানে USING কীওয়ার্ড ব্যবহার করা হয়েছে যাতে কোড সংক্ষিপ্ত ও পরিষ্কার থাকে।  
+### Booking Report (JOIN & USING)
+- Generates a detailed booking report by joining **Bookings**, **Users**, and **Vehicles** tables.
+- Uses the `USING` keyword to keep queries clean and readable.
 
-- **Market Inventory Analysis (NOT EXISTS):**  
-  NOT EXISTS ব্যবহার করে এমন গাড়িগুলো শনাক্ত করা হয়েছে যেগুলো এখনও কোনো বুকিং পায়নি।  
-  এটি ব্যবসার জন্য বোঝায় কোন গাড়ি মার্কেটিং বা প্রমোশন বেশি প্রয়োজন।  
+### Market Inventory Analysis (NOT EXISTS)
+- Identifies vehicles that have **not received any bookings** using `NOT EXISTS`.
+- Helps the business decide which vehicles need more marketing or promotion.
 
-- **Inventory Filtering (WHERE):**  
-  WHERE এবং AND ক্লজ ব্যবহার করে নির্দিষ্ট ধরনের গাড়ি (যেমন Car) এবং নির্দিষ্ট অবস্থা (যেমন Available) ফিল্টার করা হয়েছে।  
-  এর মাধ্যমে ব্যবহারকারী বা অ্যাডমিন সহজে প্রাসঙ্গিক গাড়ি খুঁজে পেতে পারে।  
+### Inventory Filtering (WHERE)
+- Uses `WHERE` and `AND` clauses to filter:
+  - Vehicle type (e.g., `Car`)
+  - Vehicle status (e.g., `Available`)
+- Makes it easy for users or admins to find relevant vehicles.
 
-- **Popularity Tracking (GROUP BY & HAVING):**  
-  GROUP BY এবং COUNT ব্যবহার করে প্রতিটি গাড়ির মোট বুকিং সংখ্যা গণনা করা হয়েছে।  
-  HAVING ক্লজ ব্যবহার করে শুধুমাত্র সেই গাড়িগুলো দেখানো হয়েছে যেগুলোর বুকিং সংখ্যা ২-এর বেশি।  
-  এটি ব্যবসায়িক দিক থেকে সবচেয়ে জনপ্রিয় গাড়ি চিহ্নিত করতে সাহায্য করে।  
+### Popularity Tracking (GROUP BY & HAVING)
+- Uses `GROUP BY` and `COUNT` to calculate total bookings per vehicle.
+- Applies `HAVING` to show only vehicles with **more than 2 bookings**.
+- Helps identify the most popular vehicles from a business perspective.
 
 ---
 
 ## 🛠 Tech Stack
 
-- **Language:** PostgreSQL
-- **Tools:** Beekeeper Studio
+- **Database:** PostgreSQL  
+- **Tools:** Beekeeper Studio  
